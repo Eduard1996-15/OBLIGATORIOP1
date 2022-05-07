@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK REL=StyleSheet HREF="css/estilos.css" TYPE="text/css" MEDIA=screen>
+    <title>Document</title>
+</head>
+
+
+
+    <body>
+
+        <div id="contenido">
+            <!--<img src="img/musica.jpg" alt="">-->
+            <input type="button" value="Volver Logueo/Registro " id="btnVolver">
+            <!--LOGUEO -->
+            <div class="logueoRegistro">
+
+
+                <!--REGISTRO AMBOS -->
+                <!--REGISTRO DOCENTE -->
+                <div id="seccionRegistro">
+                    <div id="seccionRegistroD">
+                        <h5>REGISTRO DOCENTE</h5>
+                        
+                        <label for="txtNom">Nombre :</label>
+                        <input type="text" placeholder="nombre" id="txtNom"><br><br>
+
+                        <label for="txtUsu">Usuario:</label>
+                        <input type="text" placeholder="usuario" id="txtUsu"><br><br>
+
+                        <label for="txtCon">Contraseña:</label>
+                        <input type="password" placeholder="contraseña" id="txtCon"><br><br>
+
+                        <input type="button" value="Registrarse" id="btnRegistroD"><br>
+                        <p id="errorD"></p>
+                        <p id="mostrarD"></p>
+                    </div>
+
+                    <!--REGISTRO ALUMNO-->
+                    <div id="seccionRegistroA">
+                        <h5>REGISTRO ALUMNO</h5>
+                        <label for="txtNomA">Nombre :</label>
+                        <input type="text" placeholder="nombre" id="txtNomA"><br><br>
+
+                        <label for="txtUsuA">Usuario:</label>
+                        <input type="text" placeholder="usuario" id="txtUsuA"><br><br>
+
+                        <label for="txtConA">Contraseña:</label>
+                        <input type="password" placeholder="contraseña" id="txtConA"><br><br>
+
+                        <label for="slcDocente">Docente: </label>
+                        <select id="slcDocente">
+                        </select>
+                        <br><br>
+
+                        <input type="button" value="Registrarse" id="btnRegistroA">
+                        <p id="errorA"></p>
+                        <p id="mostrarA"></p>
+                    </div>
+                </div>
+                <div id="seccionLogueo">
+                    <h5> LOGUEO USUARIO:</h5><br>
+                    <label for="txtUsuario"> Usuario:</label>
+                    <input type="text" placeholder="usuario" id="txtUsuario"><br>
+                    <label for="txtContrasenia">Clave:</label>
+                    <input type="password" placeholder="contraseña" id="txtContrasenia"><br><br>
+                    <input type="button" value="Entrar" id="btnEntrar">
+                    <p id="mostrarLog"></p>
+                    <p id="errorLog"></p><br>
+                    <p id="pParrafo"></p>
+                </div>
+            </div>
+            <!--DOCENTE DOCENTE DOCENTE DOCENTE DOCENTE DOCENTE DOCENTE DOCENTE -->
+            <!-- CONTENEDOR TODO DOCENTE-->
+            <!--PERFIL DOCENTE - GESTION DE ALUMNOS-->
+            <div class="seccion" id="seccionDocente">
+                <div>
+                    <br>
+                    <hr>
+                    <h5>CAMBIAR NIVEL ALUMNO</h5>
+                    <label for="txtVerAlumnos"><b>Alumnos : </b></label>
+                    <select id="txtVerAlumnos">
+                    </select><br>
+                    <label for="txtNivel"><b>Asignar Nivel:</b></label>
+                    <select name="" id="txtNivel">
+                        <option value="Intermedio"><b>Intermedio</b></option>
+                        <option value="Avanzado"><b>Avanzado</b></option>
+                    </select> <br><br>
+                    <input type="button" id="btnNivel" value="Cambiar"><br>
+                    <p id="errordeAsignacion"></p><br>
+                    <br>
+                    <hr>
+                    <hr>
+                </div>
+
+                <!--PERFIL DOCENTES - PLANTEAR EJERCICIO-->
+                <div>
+                    <h5>PLANTEAR EJERCICIO</h5>
+                    <label for="txtTituloEjer"> Titulo del ejercicio</label><br>
+                    <input type="text" placeholder="titulo" id="txtTituloEjer"> <br> <br>
+
+                    <label for="fileFotoEjer">Foto Ejercicio:</label> <!-- FOTO -->
+                    <input type="file" id="fileFotoEjer"><br> <br>
+
+                    <label for="txtDescripcion">Descripción<label> <br>
+                            <textarea id="txtDescripcion" placeholder="descripcion" cols="30" rows="5"></textarea><br>
+                            <!-- AREA PARA TEXTO -->
+
+                            <label for="txtNiv"><b>Nivel :</b></label>
+                            <select id="txtNiv">
+                                <option value="Inicial"><b>Inicial</b></option>
+                                <option value="Intermedio"><b>>Intermedio</b></option>
+                                <option value="Avanzado"><b>Avanzado</b></option>
+                            </select><br><br>
+
+                            <input type="button" id="btnAgregarEjer" value="Agregar"><br>
+
+                            <p id="agregado"></p>
+                            <hr>
+                            <hr>
+                </div>
+
+                <!--PERFIL DOCENETE - REDACTAR EJERCICIO-->
+                <div>
+                    <h5>REDACTAR EJERCICIO</h5>
+                    <table  class="tables">
+                        <thead class="title">
+                            <tr>
+                                <th>Alumno</th>
+                                <th>ID de Ejercicio</th>
+                                <th>Solucion</th>
+                                <th>Redactar</th>
+                                <th>Enviar Devolucion</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tdListarEje"></tbody>
+                    </table>
+                    <p id="sms"></p>
+                    <hr>
+                    <hr>
+                </div>
+                <!-------------------ESTADISTICAS DOCENTE------------------------------------->
+                <h2>Estadisticas</h2>
+
+                <h5>Alumnos con mas Ejercicios Resueltos</h5>
+
+                <label for="txtunAlumno"> Ver lista de alumnos con mas Ejercicios Resueltos</label><br>
+
+                <input type="button" id="btnBuscaAlumno" value="Listar"><br>
+                <p id="txtlosAlumnos"></p>
+
+                <h5>Cantidad total de ejercicios resueltos</h5>
+
+                <label for="txtunAlumno"> Ver cantidad total de ejercicios resueltos</label><br>
+
+                <input type="button" id="btnBuscaCantidad" value="Listar"><br>
+                <p id="txtCantidadEjerciciosRes"></p>
+
+                <h5>Total Ejercicios por Nivel y resueltos por el alumno</h5>
+                <label for="txtSusAlumnos">Alumnos:</label>
+                <select id="txtSusAlumnos">
+                </select>
+
+                <input type="button" id="btnListarEstadisticas" value="Listar"><br>
+                <p id="totalEjerciciosNivel"></p>
+                <p id="totalResueltosAlumno"></p>
+
+            </div> <!-- fIIIINNNNNAAALLL   CONTENEDOR TODO DOCENTE-->
+
+            <!-- ALUMNO ALUMNO ALUMNO ALUMNO ALUMNO ALUMNO ALUMNO ALUMNO ALUMNO-->
+
+            <div class="seccion" id="seccionAlumno">
+                <!-- CONTENEDOR TODO ALUMNO-->
+
+                <!--PERFIL ALUMNO - BUSCAR EJERCICIO-->
+                <div>
+
+                    <h5>LISTA DE SUS EJERCICIOS A ENTREGAR</h5>
+
+                    <!--lista de ejercicios qe aun no entrego-->
+                    <table  class="tables">
+                        <thead class="title">
+                            <tr>
+                                <th>Id de Ejercicio</th>
+                                <th>Titulo</th>
+                                <th>Descripción</th>
+                                <th>Foto</th>
+                                <th>Subir Entrega</th>
+                                <th>Enviar</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbllistaEjercicios"></tbody>
+                    </table>
+                    <br>
+                    <p id="noEncont"></p><br>
+                    <hr>
+                    <hr>
+
+                </div>
+                <div>
+                    <h5>BUSCAR EJERCICIO</h5>
+
+                    <label for='txtTextoBusqueda'>Buscar</label>
+                    <input type='text' placeholder="buscar" id='txtTextoBusqueda'><br><br>
+                    <input type="button" id="btnBuscarEjer" value="Buscar">
+                    <h3>Ejercicios</h3>
+
+                    <table  class="tables">
+                        <thead class="title">
+                            <tr>
+                                <th>Id de Ejercicio</th>
+                                <th>Titulo</th>
+                                <th>Descripción</th>
+                                <th>Foto</th>
+                                <th>Subir Entrega</th>
+                                <th>Enviar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblEjercicios"></tbody>
+                    </table>
+                    <br>
+                    <p id="noEncontrado"></p><br>
+
+                </div>
+                <hr>
+                <hr>
+                <div>
+                    <h5>LISTA DE SUS EJERCICIOS RESUELTOS</h5>
+                    <table border="1" class="tables">
+                        <thead class="title">
+                            <tr>
+                                <th>Id de Ejercicio</th>
+                                <th>Titulo</th>
+                                <th>Descripción</th>
+                                <th>Foto</th>
+                                <th>Devolucion</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listaEjercicios"></tbody>
+                    </table>
+                    <br>
+                    <p id="smsSinoHay"></p>
+                    <hr>
+                    <hr>
+                </div>
+                <!-------------------ESTADISTICAS ALUMNO------------------------------------->
+                <h2>Estadisticas</h2>
+
+                <label for='txtEstadistica1'>Porcentaje ejercicios resueltos:</label>
+
+                <input type="button" id="btnEstadisticaUno" value="Porcentaje">
+                <p id="porcentaje"></p><br>
+
+                <label for='txtEstadistica2'>Ejercicios con devolución:</label>
+
+                <input type="button" id="btnEstadisticaDos" value="ConDevolucion">
+                <p id="pConDevolucion"></p>
+                <br>
+                <p id="pSinDevolucion"></p>
+            </div>
+        </div> <!-- fIIIINNNNNAAALLL   CONTENEDOR TODO ALUMNO-->
+        <script src="js.js/libreria.js"></script>
+        <script src="js.js/codigo.js"></script>
+    </body>
+
+</html>
